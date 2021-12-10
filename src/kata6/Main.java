@@ -11,16 +11,12 @@ import java.util.stream.Collectors;
 import toys.Car;
 import toys.Helicopter;
 import toys.SerialNumberGenerator;
+import toys.ToyBusiness;
 
-/**
- *
- * @author Juanma
- */
 public class Main {
 
     public static void main(String[] args) {
-        SerialNumberGenerator generator = new SerialNumberGenerator();
-        
+        ToyBusiness business = new ToyBusiness();
         ArrayList<Car> cars = new ArrayList<>();
         ArrayList<Helicopter> helicopters = new ArrayList<>();
         Scanner in = new Scanner(System.in);
@@ -30,9 +26,7 @@ public class Main {
             line = in.nextLine();
             if (!line.equals("exit")){
                 if (line.equals("car")){
-                    Car car = new Car(generator.next());
-                    car.pack();
-                    car.label();
+                    Car car = business.createCar();
                     cars.add(car);
                     System.out.println(
                                "Built cars: " + cars.stream()
@@ -40,9 +34,7 @@ public class Main {
                                 .collect(Collectors.joining(",")));
                 }
                 else if (line.equals("helicopter")){
-                    Helicopter helicopter = new Helicopter(generator.next());
-                    helicopter.pack();
-                    helicopter.label();
+                    Helicopter helicopter = business.createHelicopter();
                     helicopters.add(helicopter);
                     System.out.println(
                                "Built helicopters: " + helicopters.stream()
