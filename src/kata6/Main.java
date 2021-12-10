@@ -19,8 +19,8 @@ import toys.SerialNumberGenerator;
 public class Main {
 
     public static void main(String[] args) {
-        SerialNumberGenerator generator_car = new SerialNumberGenerator();
-        SerialNumberGenerator generator_hel = new SerialNumberGenerator();
+        SerialNumberGenerator generator = new SerialNumberGenerator();
+        
         ArrayList<Car> cars = new ArrayList<>();
         ArrayList<Helicopter> helicopters = new ArrayList<>();
         Scanner in = new Scanner(System.in);
@@ -30,7 +30,7 @@ public class Main {
             line = in.nextLine();
             if (!line.equals("exit")){
                 if (line.equals("car")){
-                    Car car = new Car(generator_car.next());
+                    Car car = new Car(generator.next());
                     car.pack();
                     car.label();
                     cars.add(car);
@@ -40,7 +40,7 @@ public class Main {
                                 .collect(Collectors.joining(",")));
                 }
                 else if (line.equals("helicopter")){
-                    Helicopter helicopter = new Helicopter(generator_hel.next());
+                    Helicopter helicopter = new Helicopter(generator.next());
                     helicopter.pack();
                     helicopter.label();
                     helicopters.add(helicopter);
