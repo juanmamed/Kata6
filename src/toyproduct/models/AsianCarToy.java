@@ -7,10 +7,10 @@ package toyproduct.models;
 
 import toyproduct.Toy;
 
-public class CarToy implements Toy {
+public class AsianCarToy implements Toy {
    private Integer serialNumber;
    private final String type = "car";
-    public CarToy(Integer serialNumber) {
+    public AsianCarToy(Integer serialNumber) {
         this.serialNumber = serialNumber;
     }
 
@@ -30,5 +30,10 @@ public class CarToy implements Toy {
     @Override
     public void label() {
         System.out.printf("Labelling '%s' '%d'\n", this.type, this.serialNumber);
+    }
+    
+    @Override
+    public String toString(){
+        return "AsianCarToy(" + "serialNumber " + serialNumber + ")";
     }
 }

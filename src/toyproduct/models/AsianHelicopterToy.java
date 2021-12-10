@@ -11,10 +11,10 @@ import toyproduct.Toy;
  *
  * @author Juanma
  */
-public class HelicopterToy implements Toy {
+public class AsianHelicopterToy implements Toy {
     private Integer serialNumber;
     private final String type = "helicopter";
-    public HelicopterToy(Integer serialNumber) {
+    public AsianHelicopterToy(Integer serialNumber) {
         this.serialNumber = serialNumber;
     }
     
@@ -34,5 +34,10 @@ public class HelicopterToy implements Toy {
     @Override
     public void label() {
         System.out.printf("Labelling '%s' '%d'\n", this.type, this.serialNumber);
+    }
+    
+    @Override
+    public String toString(){
+        return "AsianHelicopterToy(" + "serialNumber " + serialNumber + ")";
     }
 }

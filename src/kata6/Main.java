@@ -5,21 +5,21 @@
  */
 package kata6;
 
+import branches.AmericanToyBusiness;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import toyproduct.Toy;
-import toyproduct.models.CarToy;
-import toyproduct.models.HelicopterToy;
-import toys.SerialNumberGenerator;
-import toys.ToyBusiness;
+import toyproduct.models.AmericanCarToy;
+import toyproduct.models.AmericanHelicopterToy;
+import business.ToyBusiness;
 
 public class Main {
 
     public static void main(String[] args) {
-        ToyBusiness business = new ToyBusiness();
-        ArrayList<CarToy> cars = new ArrayList<>();
-        ArrayList<HelicopterToy> helicopters = new ArrayList<>();
+        ToyBusiness business = new AmericanToyBusiness();
+        //ToyBusiness business = new AsianToyBusiness();
+        ArrayList<AmericanCarToy> cars = new ArrayList<>();
+        ArrayList<AmericanHelicopterToy> helicopters = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         String line = "";
         
@@ -27,19 +27,19 @@ public class Main {
             line = in.nextLine();
             if (!line.equals("exit")){
                 if (line.equals("car")){
-                    CarToy car = (CarToy) business.createToy("car");
+                    AmericanCarToy car = (AmericanCarToy) business.createToy("car");
                     cars.add(car);
                     System.out.println(
                                "Built cars: " + cars.stream()
-                                .map(c -> c.getSerialNumber().toString())
+                                .map(c -> c.toString())
                                 .collect(Collectors.joining(",")));
                 }
                 else if (line.equals("helicopter")){
-                    HelicopterToy helicopter = (HelicopterToy) business.createToy("helicopter");
+                    AmericanHelicopterToy helicopter = (AmericanHelicopterToy) business.createToy("helicopter");
                     helicopters.add(helicopter);
                     System.out.println(
                                "Built helicopters: " + helicopters.stream()
-                                .map(h -> h.getSerialNumber().toString())
+                                .map(h -> h.toString())
                                 .collect(Collectors.joining(",")));
                 } else {
                     System.out.println("Command unknown!");
