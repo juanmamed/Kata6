@@ -8,8 +8,9 @@ package kata6;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import toys.Car;
-import toys.Helicopter;
+import toyproduct.Toy;
+import toyproduct.models.CarToy;
+import toyproduct.models.HelicopterToy;
 import toys.SerialNumberGenerator;
 import toys.ToyBusiness;
 
@@ -17,8 +18,8 @@ public class Main {
 
     public static void main(String[] args) {
         ToyBusiness business = new ToyBusiness();
-        ArrayList<Car> cars = new ArrayList<>();
-        ArrayList<Helicopter> helicopters = new ArrayList<>();
+        ArrayList<CarToy> cars = new ArrayList<>();
+        ArrayList<HelicopterToy> helicopters = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         String line = "";
         
@@ -26,7 +27,7 @@ public class Main {
             line = in.nextLine();
             if (!line.equals("exit")){
                 if (line.equals("car")){
-                    Car car = business.createCar();
+                    CarToy car = (CarToy) business.createToy("car");
                     cars.add(car);
                     System.out.println(
                                "Built cars: " + cars.stream()
@@ -34,7 +35,7 @@ public class Main {
                                 .collect(Collectors.joining(",")));
                 }
                 else if (line.equals("helicopter")){
-                    Helicopter helicopter = business.createHelicopter();
+                    HelicopterToy helicopter = (HelicopterToy) business.createToy("helicopter");
                     helicopters.add(helicopter);
                     System.out.println(
                                "Built helicopters: " + helicopters.stream()

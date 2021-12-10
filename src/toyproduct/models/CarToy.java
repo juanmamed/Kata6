@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package toys;
+package toyproduct.models;
 
-/**
- *
- * @author Juanma
- */
-public class Helicopter {
-    private Integer serialNumber;
-    private final String type = "helicopter";
-    public Helicopter(Integer serialNumber) {
+import toyproduct.Toy;
+
+public class CarToy implements Toy {
+   private Integer serialNumber;
+   private final String type = "car";
+    public CarToy(Integer serialNumber) {
         this.serialNumber = serialNumber;
     }
-    
+
     public Integer getSerialNumber(){
         return serialNumber;
     }
@@ -24,10 +22,12 @@ public class Helicopter {
         return type;
     }
     
+    @Override
     public void pack() {
         System.out.printf("Packing '%s' '%d'\n", this.type, this.serialNumber);
     }
     
+    @Override
     public void label() {
         System.out.printf("Labelling '%s' '%d'\n", this.type, this.serialNumber);
     }
