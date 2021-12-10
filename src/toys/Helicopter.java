@@ -5,13 +5,17 @@
  */
 package toys;
 
-public class Car {
-   private Integer serialNumber;
-   private final String type = "car";
-    public Car(Integer serialNumber) {
+/**
+ *
+ * @author Juanma
+ */
+public class Helicopter {
+    private Integer serialNumber;
+    private final String type = "helicopter";
+    public Helicopter(Integer serialNumber) {
         this.serialNumber = serialNumber;
     }
-
+    
     public Integer getSerialNumber(){
         return serialNumber;
     }
