@@ -1,27 +1,29 @@
-package branches;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package factories.regionalfactories;
 
-import business.ToyBusiness;
+import factories.ToyFactory;
 import toyproduct.Toy;
 import toyproduct.models.AmericanCarToy;
 import toyproduct.models.AmericanHelicopterToy;
 
-public class AmericanToyBusiness extends ToyBusiness{
+public class AmericanToyFactory extends ToyFactory {
 
     @Override
-    public Toy createToy(String type){
-        switch(type){
+    public Toy createToy(String type) {
+            switch(type){
             case "car":
                 AmericanCarToy car = new AmericanCarToy(this.generator.next());
-                car.pack();
-                car.label();
                 return car;
             case "helicopter":
                 AmericanHelicopterToy hel = new AmericanHelicopterToy(this.generator.next());
-                hel.pack();
-                hel.label();
                 return hel;
             default:
                 return null;
         }
     }
+    
 }

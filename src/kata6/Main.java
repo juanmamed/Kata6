@@ -5,21 +5,22 @@
  */
 package kata6;
 
-import branches.AmericanToyBusiness;
-import branches.AsianToyBusiness;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import toyproduct.models.AmericanCarToy;
 import toyproduct.models.AmericanHelicopterToy;
 import business.ToyBusiness;
+import factories.regionalfactories.AmericanToyFactory;
+import factories.regionalfactories.AsianToyFactory;
 import toyproduct.Toy;
 
 public class Main {
 
     public static void main(String[] args) {
-        ToyBusiness business = new AmericanToyBusiness();
-        //ToyBusiness business = new AsianToyBusiness();
+        AmericanToyFactory americanToyFactory = new AmericanToyFactory();
+        AsianToyFactory asianToyFactory = new AsianToyFactory();
+        ToyBusiness toyBusiness = new ToyBusiness(asianToyFactory);
         ArrayList<Toy> toys = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         String line = "";
@@ -28,7 +29,7 @@ public class Main {
             line = in.nextLine();
             if (!line.equals("exit")){
                 if ((line.equals("car")) || (line.equals("helicopter"))){
-                    toys.add(business.createToy(line));
+                    toys.add(toyBusiness.produceToy(line));
                     System.out.println(
                                "Built cars: " + toys.stream()
                                 .map(c -> c.toString())
