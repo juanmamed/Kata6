@@ -6,42 +6,35 @@
 package kata6;
 
 import branches.AmericanToyBusiness;
+import branches.AsianToyBusiness;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import toyproduct.models.AmericanCarToy;
 import toyproduct.models.AmericanHelicopterToy;
 import business.ToyBusiness;
+import toyproduct.Toy;
 
 public class Main {
 
     public static void main(String[] args) {
         ToyBusiness business = new AmericanToyBusiness();
         //ToyBusiness business = new AsianToyBusiness();
-        ArrayList<AmericanCarToy> cars = new ArrayList<>();
-        ArrayList<AmericanHelicopterToy> helicopters = new ArrayList<>();
+        ArrayList<Toy> toys = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         String line = "";
         
         while(!line.equals("exit")){
             line = in.nextLine();
             if (!line.equals("exit")){
-                if (line.equals("car")){
-                    AmericanCarToy car = (AmericanCarToy) business.createToy("car");
-                    cars.add(car);
+                if ((line.equals("car")) || (line.equals("helicopter"))){
+                    toys.add(business.createToy(line));
                     System.out.println(
-                               "Built cars: " + cars.stream()
+                               "Built cars: " + toys.stream()
                                 .map(c -> c.toString())
                                 .collect(Collectors.joining(",")));
                 }
-                else if (line.equals("helicopter")){
-                    AmericanHelicopterToy helicopter = (AmericanHelicopterToy) business.createToy("helicopter");
-                    helicopters.add(helicopter);
-                    System.out.println(
-                               "Built helicopters: " + helicopters.stream()
-                                .map(h -> h.toString())
-                                .collect(Collectors.joining(",")));
-                } else {
+                else {
                     System.out.println("Command unknown!");
                 }
             }
