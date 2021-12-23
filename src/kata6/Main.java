@@ -11,17 +11,19 @@ import java.util.stream.Collectors;
 import toyproduct.models.AmericanCarToy;
 import toyproduct.models.AmericanHelicopterToy;
 import business.ToyBusiness;
-import factories.regionalfactories.AmericanToyFactory;
-import factories.regionalfactories.AsianToyFactory;
+import factories.regionalfactories.AmericanCarToyFactory;
+import factories.regionalfactories.AmericanHelicopterToyFactory;
+import factories.regionalfactories.AsianCarToyFactory;
 import toyproduct.Toy;
 
 public class Main {
 
     public static void main(String[] args) {
-        AmericanToyFactory americanToyFactory = new AmericanToyFactory();
-        AsianToyFactory asianToyFactory = new AsianToyFactory();
-        ToyBusiness toyBusiness = new ToyBusiness(asianToyFactory);
+        ToyBusiness toyBusiness = new ToyBusiness();
         ArrayList<Toy> toys = new ArrayList<>();
+        toyBusiness.add("car", new AmericanCarToyFactory());
+        toyBusiness.add("helicopter", new AmericanHelicopterToyFactory());
+        
         Scanner in = new Scanner(System.in);
         String line = "";
         

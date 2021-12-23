@@ -3,14 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/factories/ToyFactory.java</file>
             <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/toyproduct/Toy.java</file>
-            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/business/ToyBusiness.java</file>
-            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/toyproduct/models/AmericanCarToy.java</file>
             <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/toyproduct/models/AmericanHelicopterToy.java</file>
-            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/branches/AmericanToyBusiness.java</file>
-            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/branches/AsianToyBusiness.java</file>
+            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/factories/regionalfactories/AmericanHelicopterToyFactory.java</file>
+            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/factories/regionalfactories/AsianCarToyFactory.java</file>
+            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/factories/regionalfactories/AmericanCarToyFactory.java</file>
+            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/business/ToyBusiness.java</file>
+            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/factories/regionalfactories/AsianHelicopterToyFactory.java</file>
+            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/toyproduct/models/AmericanCarToy.java</file>
             <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/kata6/Main.java</file>
-            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/business/SerialNumberGenerator.java</file>
+            <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/factories/SerialNumberGenerator.java</file>
             <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/toyproduct/models/AsianCarToy.java</file>
             <file>file:/C:/Users/Juanma/OneDrive/Documentos/NetBeansProjects/Kata6/src/toyproduct/models/AsianHelicopterToy.java</file>
         </group>
